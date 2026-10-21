@@ -405,17 +405,17 @@
     },
     {
       "group": "config",
-      "name": "detect-config-v1.zip",
-      "size": 3622,
-      "sha256": "8d0351d790909e0df25e893d7a38168e14a588ae0d96f08ad169d82e80d98564",
+      "name": "detect-config-public-v1.zip",
+      "size": 2975,
+      "sha256": "3a8682ca259da3b21df195fad8e9ab9ba8e9f16d6fda4faac1943e62654c5a55",
       "files": [
         {
           "member": "project/camera/config/cameras.json",
           "root": "project",
           "target": "camera/config/cameras.json",
           "preserve_existing": true,
-          "sha256": "0abe3726b07ac499dd5fc13cd66f300dc62ac1cb72bfc5cc9dc887fbdc904020",
-          "size": 21693
+          "sha256": "4a4470b875e811129be12cf09d59926494e4c755dd8c084a593cc7085320ec72",
+          "size": 20729
         }
       ]
     },
@@ -830,5 +830,6 @@
     "logs",
     "publication artifacts",
     "duplicate engine backups"
-  ]
+  ],
+  "visibility": "public"
 }

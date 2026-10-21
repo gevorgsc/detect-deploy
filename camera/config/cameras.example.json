@@ -2,7 +2,7 @@
   "branches": [
     {
       "id": "br_01",
-      "name": "GSC",
+      "name": "Branch 1",
       "note": "",
       "plan": {
         "aspect": 1.6,
@@ -177,7 +177,7 @@
                 0.5610389401111692
               ]
             ],
-            "name": "working_room"
+            "name": "Area 2"
           },
           {
             "id": "rmui5k1z9",
@@ -199,7 +199,7 @@
                 0.5598166237266406
               ]
             ],
-            "name": "showroom"
+            "name": "Area 3"
           }
         ],
         "furniture": [
@@ -417,7 +417,7 @@
       "zones": [
         {
           "id": "rmui5k1z9",
-          "name": "showroom",
+          "name": "Area 4",
           "points": [
             [
               0.2536287168468428,
@@ -439,7 +439,7 @@
         },
         {
           "id": "rmui5iixg",
-          "name": "working_room",
+          "name": "Area 5",
           "points": [
             [
               0.14820473152773253,
@@ -465,10 +465,10 @@
   "cameras": [
     {
       "id": "cam_01",
-      "name": "1",
-      "ip": "172.16.11.141",
+      "name": "Camera 1",
+      "ip": "192.0.2.11",
       "port": 8000,
-      "username": "admin",
+      "username": "",
       "password": "",
       "channel": 1,
       "models": {
@@ -686,10 +686,10 @@
     },
     {
       "id": "cam_02",
-      "name": "2",
-      "ip": "172.16.11.55",
+      "name": "Camera 2",
+      "ip": "192.0.2.12",
       "port": 8000,
-      "username": "admin",
+      "username": "",
       "password": "",
       "channel": 1,
       "models": {
@@ -703,10 +703,10 @@
     },
     {
       "id": "cam_03",
-      "name": "3",
-      "ip": "172.16.11.197",
+      "name": "Camera 3",
+      "ip": "192.0.2.13",
       "port": 8000,
-      "username": "admin",
+      "username": "",
       "password": "",
       "channel": 1,
       "models": {
@@ -720,10 +720,10 @@
     },
     {
       "id": "cam_04",
-      "name": "4",
-      "ip": "172.16.11.216",
+      "name": "Camera 4",
+      "ip": "192.0.2.14",
       "port": 8000,
-      "username": "admin",
+      "username": "",
       "password": "",
       "channel": 1,
       "models": {

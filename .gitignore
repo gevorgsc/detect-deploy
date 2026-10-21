@@ -8,6 +8,7 @@ __pycache__/
 *.db
 data/
 camera/config/cameras.json
+camera/config/.cameras-*
 camera/SDK/
 recognition/*.pt
 recognition/*.onnx

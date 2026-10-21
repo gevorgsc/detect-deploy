@@ -1,121 +1,98 @@
-# Detect — installation on another Windows PC
+# Detect — multi-camera people and activity analytics
 
-Hikvision multi-camera analytics with pose and activity recognition, face recognition,
-handgun detection, timelines, and a live floor map. This repository contains the
-working application's source and deployment tools. Its private release contains the
-models, Hikvision SDK, and original camera/floor-map configuration.
+**Մանրամասն հայերեն նկարագրություն և տեղադրման ուղեցույց՝
+[PROJECT_AND_INSTALLATION_HY.md](PROJECT_AND_INSTALLATION_HY.md)**։
 
-**No enrolled people, face crops, identity embeddings, event history, or SQLite
-databases are included.** The application creates empty databases on its first run.
-The generic AntelopeV2 face-recognition network is included; it contains no enrollment
-from this installation.
+Detect is a local Windows application for Hikvision cameras. It combines live video,
+pose and activity recognition, face recognition, trained handgun detection, daily
+timelines, clothing search, and a calibrated floor map. Its FastAPI web UI runs at
+**http://localhost:8000**.
 
-## Install
+Repository: https://github.com/gevorgsc/detect-deploy  
+Models and SDK: https://github.com/gevorgsc/detect-deploy/releases/tag/migration-v1
 
-Use 64-bit Windows, Python 3.11, a working NVIDIA driver, and network access to the
-configured cameras. The source machine runs an RTX 5080 with 16 GB VRAM, PyTorch
-2.11.0/CUDA 12.8. Exact GPU capacity requirements on another card are not measured.
-The image sizes and inference batch sizes currently target that source configuration.
+## Included
 
-Install Python 3.11 and GitHub CLI, authenticate to the account with access to this
-private repository, and download the source (Git is optional):
+- Complete application source in `camera/`, `recognition/`, and `web/`.
+- Installation scripts, pinned dependencies, public downloads and validation tools.
+- All migration models and the complete Hikvision SDK in release assets.
+- Floor-map geometry, calibration, model toggles and generic example connections.
+- Optional model exports and source-GPU engines, kept outside active model paths.
+
+**Enrolled people, face crops, identity embeddings, SQLite databases and history are
+excluded. Camera IPs are examples; usernames and passwords are blank.** Enter actual
+camera connections locally after installation. The generic AntelopeV2 neural network
+is included; none of the source installation's enrolled identity vectors accompany it.
+
+## Install on another PC
+
+Use **64-bit Windows, Python 3.11, an NVIDIA GPU with a compatible driver, and camera
+network access**. The original configuration ran on an RTX 5080 with 16 GB VRAM.
+Memory fit and throughput on another GPU must be checked there.
+
+Download **Code → Download ZIP** and extract it, or use Git:
 
 ```powershell
-gh auth login
-gh repo clone gevorgsc/detect-deploy
+git clone https://github.com/gevorgsc/detect-deploy.git
 cd detect-deploy
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+.\.venv\Scripts\python.exe scripts\configure_cameras.py
 powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1
 ```
 
-`gh repo clone` requires Git. Alternatively, use the repository's **Code → Download
-ZIP**, extract it, and run the same `install.ps1` inside the extracted folder. If
-GitHub CLI is not installed, download the `core` and `config` ZIP assets from the
-private release into `.downloads/` before running the installer.
+GitHub login and GitHub CLI are not required. The installer downloads public release
+assets directly, verifies SHA-256, creates `.venv`, installs CUDA packages and tests
+all active models without connecting to cameras. The configuration tool hides
+password entry and saves settings locally. `start.ps1` checks the configuration
+before making camera login attempts.
 
-The installer creates an isolated `.venv`, downloads and checks the release assets,
-installs the pinned CUDA packages, and tests the SDK and all active models without
-logging into cameras. If Hikvision DLL loading reports a missing runtime dependency,
-install the Microsoft Visual C++ 2015–2022 Redistributable (x64).
-
-Open **http://localhost:8000** after starting. Camera login is staggered, so the web
-server becomes available after the model initialization and camera startup sequence.
-
-Stop cleanly with Ctrl+C in the server terminal or:
+Open **http://localhost:8000** after model initialization and staggered camera startup.
+Stop with Ctrl+C or:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\stop.ps1
 ```
 
-Avoid force-killing the process: each camera SDK session needs to close normally.
-When switching PCs, stop the old instance before starting the new one.
+## Release groups
 
-## Models and release groups
-
-`assets-manifest.json` lists each asset, SHA-256, member, destination, and size.
-
-| Group | Contents | Installed by default |
+| Group | Contents | Default install |
 |---|---|---|
-| `core` | `yolo11s-pose.pt`, `yolo26x.pt`, `weapon.pt`; AntelopeV2 ONNX networks; complete Hikvision SDK; InsightFace wheel | Yes |
-| `config` | Original camera connections, model toggles, branch, floor plan, calibration and zones | Yes, existing local config is preserved |
-| `engines` | Source GPU's active FP16/INT8 engines | No; saved to `reference_engines/` only |
-| `optional` | YOLOE/YOLO-World, MobileCLIP, CLIP, PAR and alternate ONNX exports | No; archived alternatives, unused in the default runtime |
+| `core` | Three active `.pt` models, AntelopeV2, Hikvision SDK, InsightFace wheel | Yes |
+| `config` | Example connections, toggles, branch, floor plan, calibration and zones | Yes; existing local config is preserved |
+| `engines` | Source GPU's TensorRT exports, installed under `reference_engines/` | Optional |
+| `optional` | YOLOE/YOLO-World, MobileCLIP, CLIP, PAR and alternate ONNX exports | Optional |
 
-The source code selects `.engine` files automatically when present beside `.pt`.
-**Source-machine engines are deliberately installed in `reference_engines/`, never
-as active engines on the new PC.** The default install runs portable `.pt` weights
-on CUDA. Performance may differ from the source machine's optimized TensorRT runtime.
-
-To build and test fresh TensorRT engines on the destination GPU:
+`assets-manifest.json` records every archive and member SHA-256, size and destination.
+Default installation runs portable `.pt` weights on CUDA. To build TensorRT engines
+on the destination GPU, stop the app and run:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -BuildEngines
 ```
 
-This is optional and can take time and extra GPU memory. Stop Detect first.
-`scripts/build_engines.py` exports the actual rectangular input sizes and batch limits
-used by `web/web_server.py`. It validates each engine before placing it in
-`recognition/`. If a destination card cannot run these sizes, adjust the runtime
-sizes/batches and export settings together. For the optional YOLOE backend, the
-source TensorRT engine also needs rebuilding for a different GPU; the default backend
-uses the included trained `weapon.pt`.
-
-Fetch every archived alternative, without enabling them:
+Source-machine engines are hardware references, never automatically placed in the
+active model directory. To retrieve optional archives:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\fetch_assets.py --groups engines optional
 ```
 
-## Configuration and storage
+## Local data and checks
 
-The original runtime configuration is transferred through the private release,
-outside Git history. `camera/config/cameras.example.json` has blank passwords.
-`camera/config/cameras.json` is restored only if it does not already exist. The
-application's camera and floor-map UI can update it normally afterward.
-
-`data/analytics.sqlite3`, `data/faces.sqlite3`, crops, and unknown-face records are
-created locally. Existing data on the original computer is untouched. The original
-`data/`, camera captures, experiments with captured people, logs, and unrelated
-publication files were excluded from this transfer.
-
-To check an installation without starting the server or connecting to cameras:
+`camera/config/cameras.json` and `data/` stay local and are ignored by Git. Empty
+databases are created at first startup. The original computer's files were untouched.
 
 ```powershell
+.\.venv\Scripts\python.exe scripts\configure_cameras.py --check
 .\.venv\Scripts\python.exe scripts\doctor.py --models
 ```
 
-InsightFace is installed from the bundled wheel with `--no-deps`; its actual runtime
-dependencies are explicitly listed in `requirements.txt`. This avoids installing
-the CPU `onnxruntime` distribution over `onnxruntime-gpu`. Consequently, `pip check`
-may report that InsightFace's distribution-level `onnxruntime` requirement is
-missing; the installer verifies the actual CUDA sessions instead. The source
-machine also had two OpenCV distributions; the new install uses one matching the
-source's actual imported version, OpenCV 4.11.
+InsightFace installs from its bundled wheel with `--no-deps`; functional dependencies
+are pinned explicitly to preserve `onnxruntime-gpu`. `pip check` may still report its
+distribution-level CPU `onnxruntime` requirement; actual CUDA sessions are tested.
 
-## Continue setup with Codex
-
-On the destination computer, open the downloaded repository folder and tell Codex:
-«Տեղադրիր այս repo-ի ծրագիրը՝ README.md-ի և INSTALL_HANDOFF.md-ի համաձայն»։
-The repo includes the source environment, model manifests, installation validation,
-and a handoff explaining which steps remain specific to the destination PC.
+See [INSTALL_HANDOFF.md](INSTALL_HANDOFF.md) for destination setup with Codex,
+[source-environment.json](source-environment.json) for the original environment, and
+[VALIDATION.json](VALIDATION.json) for preparation checks. Actual destination GPU and
+camera verification remain part of installing on that machine.
 

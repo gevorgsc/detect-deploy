@@ -1,7 +1,7 @@
 {
   "passed": true,
   "prepared_date": "2026-10-21",
-  "python_files_parsed": 14,
+  "python_files_parsed": 15,
   "powershell_parse": true,
   "dependency_resolution_verified": true,
   "original_source_files_preserved": 11,
@@ -21,5 +21,14 @@
     "destination GPU/driver not yet tested",
     "real camera verification required on destination",
     "source application left running; no source data modified"
-  ]
+  ],
+  "public_payload_verified": true,
+  "credential_scan_source_and_archives": true,
+  "anonymous_download_mock_verified": true,
+  "corrupt_public_download_rejected": true,
+  "public_camera_defaults_rejected": true,
+  "local_camera_configuration_tested": true,
+  "calibration_preserved": true,
+  "local_credentials_preserved_on_reinstall": true,
+  "armenian_guide_lines": 383
 }

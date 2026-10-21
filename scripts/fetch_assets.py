@@ -1,4 +1,4 @@
-"""Fetch the private release and install only manifest-listed, verified files."""
+"""Fetch release assets and install only manifest-listed, verified files."""
 from __future__ import annotations
 
 import argparse
@@ -9,6 +9,8 @@ from pathlib import Path, PurePosixPath
 import shutil
 import subprocess
 import tempfile
+import urllib.parse
+import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,11 +102,26 @@ def main() -> None:
             continue
         archive = args.cache_dir / checked_relative(asset['name'])
         if not archive.exists():
-            gh = shutil.which('gh')
-            if not gh:
-                raise SystemExit('Install GitHub CLI (https://cli.github.com/) and run gh auth login, or copy all release ZIPs into .downloads/.')
-            subprocess.run([gh, 'release', 'download', manifest['tag'], '--repo', repository,
-                            '--pattern', asset['name'], '--dir', str(args.cache_dir)], check=True)
+            if manifest.get('visibility') == 'public':
+                url = (f'https://github.com/{repository}/releases/download/'
+                       f'{urllib.parse.quote(manifest["tag"], safe="")}/'
+                       f'{urllib.parse.quote(asset["name"], safe="")}')
+                request = urllib.request.Request(url, headers={'User-Agent': 'Detect-Installer/1'})
+                temporary = archive.with_name(archive.name + '.partial')
+                try:
+                    with urllib.request.urlopen(request, timeout=90) as response, temporary.open('wb') as output:
+                        shutil.copyfileobj(response, output, 4 * 1024 * 1024)
+                    if sha256(temporary) != asset['sha256']:
+                        raise ValueError(f'Download checksum mismatch: {asset["name"]}')
+                    os.replace(temporary, archive)
+                finally:
+                    temporary.unlink(missing_ok=True)
+            else:
+                gh = shutil.which('gh')
+                if not gh:
+                    raise SystemExit('Install GitHub CLI and run gh auth login, or copy all release ZIPs into .downloads/.')
+                subprocess.run([gh, 'release', 'download', manifest['tag'], '--repo', repository,
+                                '--pattern', asset['name'], '--dir', str(args.cache_dir)], check=True)
         if args.verify_only:
             verify_archive(archive, asset)
         else:

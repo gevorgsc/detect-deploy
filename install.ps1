@@ -40,5 +40,5 @@ if ($BuildEngines) {
     Invoke-Checked $python @('scripts\build_engines.py')
 }
 Invoke-Checked $python @('scripts\doctor.py', '--models')
-Write-Host 'Installation completed. Run .\start.ps1 and open http://localhost:8000'
+Write-Host 'Installation completed. Configure camera credentials with .\.venv\Scripts\python.exe scripts\configure_cameras.py, then run .\start.ps1 and open http://localhost:8000'
 

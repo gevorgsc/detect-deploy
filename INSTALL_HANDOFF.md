@@ -1,43 +1,41 @@
 # Destination-PC handoff
 
-The owner requested a complete transferable installation on 2026-10-21, with all
-necessary code/models/settings, explicitly excluding enrolled people. This is an
-installation package, not a copy of the source machine's live databases.
+The owner requested a complete transferable Detect installation, excluding enrolled
+people, then explicitly requested a public repository. The public release contains
+sanitized example connections. Enter actual camera credentials locally; the source
+computer's configuration was not changed.
 
-1. Read README.md, `source-environment.json`, and `assets-manifest.json`.
-2. Inspect destination OS, Python, NVIDIA GPU/VRAM, driver, free disk and camera LAN.
-   The preserved settings were used with an RTX 5080/16 GB. Do not promise the same
-   throughput or memory fit on a different GPU before checking.
-3. Use Python 3.11 x64 and the isolated `.venv` from `install.ps1`. GitHub CLI must
-   authenticate to an account with access to this private repo, unless the release
-   ZIPs have already been downloaded manually into `.downloads/`.
-4. Run install.ps1. Default models are CUDA PyTorch `.pt`, avoiding incompatible
-   source-GPU TensorRT engines. AntelopeV2 is restored into the destination user's
-   `.insightface/models/antelopev2`; it is a pretrained generic model, not the user's
-   identity database. The bundled InsightFace wheel is installed without dependencies
-   to preserve GPU ONNX Runtime. Do not install CPU onnxruntime over it.
-5. `scripts/doctor.py --models` verifies model inference and SDK loading without
-   logging into cameras or creating face/event databases.
-6. Ensure the old PC's Detect instance is stopped before running a duplicate against
-   the same cameras. Use POST /api/shutdown or Ctrl+C, not force-kill. The original
-   process was left running while the transfer package was prepared.
-7. Start with start.ps1, wait for staggered startup and HTTP 200 on localhost:8000,
-   then check actual camera frames and face/pose/object/weapon processing. Fresh
-   people records may be created from new live camera frames; old enrollments were
-   not transferred. Verify the UI and map/calibration persisted from the config.
-8. If performance needs TensorRT, stop the app and use install.ps1 -BuildEngines;
-   build on the actual destination GPU. Exact source image dimensions and batch
-   limits are in build_engines.py. Source engines are references only.
+1. Read PROJECT_AND_INSTALLATION_HY.md, README.md, source-environment.json and assets-manifest.json.
+2. Inspect destination Windows/Python, NVIDIA GPU/VRAM, driver, disk space and camera
+   network. Source sizes and batches ran on an RTX 5080/16 GB; check the new GPU's fit.
+3. Use Python 3.11 x64 and install.ps1. Public assets download through Python's standard
+   library. No GitHub login or GitHub CLI is needed. Manually downloaded core/config
+   ZIPs can also be placed in .downloads/.
+4. Default models use CUDA PyTorch .pt. AntelopeV2 goes into the destination user's
+   .insightface/models/antelopev2. Source-GPU engines stay outside active paths.
+   InsightFace installs without dependencies to preserve ONNX Runtime GPU; do not
+   replace it with CPU onnxruntime to satisfy pip check's metadata warning.
+5. Run .venv\Scripts\python.exe scripts\configure_cameras.py. It prompts for IPv4,
+   SDK port, channel, username and hidden password, and saves them in ignored local
+   config. Keep camera IDs stable for floor-map calibration. Public defaults are
+   documentation IPs and blank credentials; start.ps1 refuses those before login.
+6. Run doctor.py --models. It loads DLLs and runs all active networks without camera
+   login. This does not prove simultaneous live batch memory fit or video throughput.
+7. Stop the old instance before using the same cameras on the new PC. Use Ctrl+C or
+   POST /api/shutdown. The source instance was left running during package preparation.
+8. Start with start.ps1. Verify HTTP 200, real frames, statuses, detectors, new face
+   records and map calibration. Enrollments/history were not transferred. New records
+   may appear from live frames. Recalibrate if camera placement changed.
+9. If necessary, stop the app and run install.ps1 -BuildEngines on the target GPU.
+   Change both runtime and exporter settings together if reducing sizes/batches.
 
-No source-machine people DB, identity vector, cropped face, unknown-face image,
-analytics history, capture/calibration image, or diagnostic log was uploaded. The
-only `data/` assets permitted are floor-plan images if referenced by configuration.
-Full original camera configuration, including credentials, is inside the **private**
-config release asset. Do not print those credentials in chat, logs, or screenshots.
-The sanitized example config in Git keeps connections/calibration but clears passwords.
+No source people DB, identity vector, crop, unknown-face image, history, calibration
+capture or diagnostic log is included. Local credentials and runtime data are ignored
+by Git. The original private config release asset was removed and replaced with a
+sanitized archive before the repository became public.
 
-Local preparation validation checks Python and PowerShell parsing, dependencies,
-release/member SHA-256, a clean extraction, preservation of existing config, exclusion
-of people/history files, and import of the app against empty test storage. This does
-not substitute for destination GPU/driver and real-camera verification.
+Preparation checks cover code parsing, dependency resolution, archive/member hashes,
+isolated app import and extraction, blank people stores, config preservation, public
+downloads, and rejection of unconfigured cameras. Test destination hardware, driver,
+live video and camera access on that PC.
 

@@ -1,6 +1,6 @@
 # Included third-party components
 
-This private migration preserves the models and SDK already used by the owner.
+This migration preserves the models and SDK already used by the owner.
 Their respective upstream licenses and usage terms continue to apply; this package
 does not grant a new license to those third-party artifacts.
 
