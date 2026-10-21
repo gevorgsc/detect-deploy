@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "prepared_date": "2026-10-21",
+  "python_files_parsed": 14,
+  "powershell_parse": true,
+  "dependency_resolution_verified": true,
+  "original_source_files_preserved": 11,
+  "private_passwords_absent_from_git": true,
+  "excluded_people_and_history": true,
+  "archive_and_member_hashes_verified": true,
+  "clean_extraction_verified": true,
+  "existing_config_preservation_verified": true,
+  "corrupt_download_rejected": true,
+  "path_traversal_rejected": true,
+  "application_import": true,
+  "clean_people_stores": true,
+  "http_smoke": 200,
+  "asset_count": 5,
+  "release_bytes": 2861796588,
+  "limits": [
+    "destination GPU/driver not yet tested",
+    "real camera verification required on destination",
+    "source application left running; no source data modified"
+  ]
+}

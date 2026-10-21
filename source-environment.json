@@ -1,0 +1,29 @@
+{
+  "prepared_date": "2026-10-21",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "vram_mib": 16303,
+  "driver": "610.88",
+  "cuda_pytorch": "12.8",
+  "actual_imported_opencv": "4.11.0",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "ultralytics": "8.4.78",
+    "opencv-python": "4.9.0.80",
+    "opencv-contrib-python": "4.11.0.86",
+    "numpy": "2.3.5",
+    "insightface": "1.0.1",
+    "onnxruntime-gpu": "1.22.0",
+    "onnx": "1.21.0",
+    "tensorrt": "11.1.0.106",
+    "fastapi": "0.111.0",
+    "uvicorn": "0.30.1"
+  },
+  "notes": [
+    "source had duplicate OpenCV distributions; target installs one OpenCV 4.11 wheel",
+    "source TensorRT engines are GPU-specific and kept outside active recognition directory",
+    "no people data transferred; fresh databases created at first startup"
+  ]
+}

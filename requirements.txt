@@ -1,0 +1,31 @@
+# Runtime only. install.ps1 installs CUDA PyTorch first and InsightFace last.
+-c requirements.lock
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+ultralytics==8.4.78
+numpy==2.3.5
+opencv-python==4.11.0.86
+fastapi==0.111.0
+uvicorn==0.30.1
+starlette==0.37.2
+pydantic==2.13.4
+onnx==1.21.0
+onnxruntime-gpu==1.22.0
+scipy==1.17.1
+scikit-image==0.26.0
+tqdm==4.68.3
+requests==2.34.2
+matplotlib==3.11.0
+pillow==12.2.0
+pyyaml==6.0.3
+psutil==7.2.2
+polars==1.42.0
+nvidia-ml-py==13.610.43
+ultralytics-thop==2.0.20
+packaging==26.2
+protobuf==4.25.9
+flatbuffers==25.12.19
+coloredlogs==15.0.1
+sympy==1.14.0
+lap==0.5.13
+

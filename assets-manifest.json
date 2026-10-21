@@ -1,0 +1,834 @@
+{
+  "schema": 1,
+  "repository": "gevorgsc/detect-deploy",
+  "tag": "migration-v1",
+  "assets": [
+    {
+      "group": "core",
+      "name": "detect-core-v1.zip",
+      "size": 556179642,
+      "sha256": "05a854826ef49c76e51840a4e388d9d372242a779d30c48aa26eb4401438da5c",
+      "files": [
+        {
+          "member": "project/recognition/yolo11s-pose.pt",
+          "root": "project",
+          "target": "recognition/yolo11s-pose.pt",
+          "preserve_existing": false,
+          "sha256": "1060bda4a27012060eca246f9b2adeea22eabb045a1e58f8d229be29b7ebc2ba",
+          "size": 20373161
+        },
+        {
+          "member": "project/recognition/yolo26x.pt",
+          "root": "project",
+          "target": "recognition/yolo26x.pt",
+          "preserve_existing": false,
+          "sha256": "9fdd44a31c504547ffb81d2c6d9e6dac3493c8eaa8b0398d3f43bae6c7003e92",
+          "size": 118667365
+        },
+        {
+          "member": "project/recognition/weapon.pt",
+          "root": "project",
+          "target": "recognition/weapon.pt",
+          "preserve_existing": false,
+          "sha256": "f47f9ddbcb8114c778813dc3fff032588431640c7e052e2d5b47f05fae805e4c",
+          "size": 44111065
+        },
+        {
+          "member": "project/camera/SDK/lib/AudioRender.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/AudioRender.dll",
+          "preserve_existing": false,
+          "sha256": "2455f934031443f858d026f0fbe17792dd385a563b706b67b0ccbcd8b7fd9efa",
+          "size": 149504
+        },
+        {
+          "member": "project/camera/SDK/lib/DemoLocalCfg.json",
+          "root": "project",
+          "target": "camera/SDK/lib/DemoLocalCfg.json",
+          "preserve_existing": false,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "member": "project/camera/SDK/lib/DeviceCfg.json",
+          "root": "project",
+          "target": "camera/SDK/lib/DeviceCfg.json",
+          "preserve_existing": false,
+          "sha256": "ec4c417773b9472e98041b5a34f6266e9b02f4a6e43aaa579931594b95ed11ae",
+          "size": 20
+        },
+        {
+          "member": "project/camera/SDK/lib/GdiPlus.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/GdiPlus.dll",
+          "preserve_existing": false,
+          "sha256": "222095f88914695b96330e4f5f9ff7a55d670b1117ae378b636ac0daea638ccd",
+          "size": 2166272
+        },
+        {
+          "member": "project/camera/SDK/lib/HCCore.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCCore.dll",
+          "preserve_existing": false,
+          "sha256": "fb348f21b0dfca23e6ef29e2f39fb0166249f262ac4d2ba78ad7f2ff5618e237",
+          "size": 2998784
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDK.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDK.dll",
+          "preserve_existing": false,
+          "sha256": "321e94072276fb70d5f6d36bf053f437fc157b9f62ba941d5b05401ce05a7f27",
+          "size": 1187328
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/AnalyzeData.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/AnalyzeData.dll",
+          "preserve_existing": false,
+          "sha256": "f025c7c8d0b5ea363cdc44b91045f28dd91fd2337b9c8abe11a44bc90a28f161",
+          "size": 517120
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/AudioIntercom.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/AudioIntercom.dll",
+          "preserve_existing": false,
+          "sha256": "3329b6f09af69f31721469ddaaca548e562099b0a5deec8325960659c89559a8",
+          "size": 2392064
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/AudioRender.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/AudioRender.dll",
+          "preserve_existing": false,
+          "sha256": "2455f934031443f858d026f0fbe17792dd385a563b706b67b0ccbcd8b7fd9efa",
+          "size": 149504
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCAlarm.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCAlarm.dll",
+          "preserve_existing": false,
+          "sha256": "19f6f45482d770c3bb2c81962c8735409c3198da5fc929c864bec8f8401e0068",
+          "size": 1189376
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCAlarm.lib",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCAlarm.lib",
+          "preserve_existing": false,
+          "sha256": "8ffd9224a8e28829b92308540f64b40157977de86551ef6158cb70e57cfccb91",
+          "size": 13116
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCCoreDevCfg.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCCoreDevCfg.dll",
+          "preserve_existing": false,
+          "sha256": "ddef82f5a1969ffed53060fbad6083b385114a9b282c33063127bafad2fceb20",
+          "size": 1274880
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCDisplay.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCDisplay.dll",
+          "preserve_existing": false,
+          "sha256": "1b4b139516a793263abbc9ca2d28fac2c495a79468b707d52fa37a8935efccd0",
+          "size": 1272832
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCGeneralCfgMgr.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCGeneralCfgMgr.dll",
+          "preserve_existing": false,
+          "sha256": "e226e71cc4a045b7109ceee50123a0f839da30b29d0d4b639ac7feb28895971e",
+          "size": 2061312
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCGeneralCfgMgr.lib",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCGeneralCfgMgr.lib",
+          "preserve_existing": false,
+          "sha256": "57b88c5fca3c17c693697f11f67bfad96c0caef77b7cdb12b14ac16b057b627f",
+          "size": 44056
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCIndustry.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCIndustry.dll",
+          "preserve_existing": false,
+          "sha256": "b756eb06813162094476268996f91d8643f1091637e91004fdcb930118d2a937",
+          "size": 1626624
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCPlayBack.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCPlayBack.dll",
+          "preserve_existing": false,
+          "sha256": "27bca4dd42d485e648625cb1ad543ce9b68268aa606f76ca7d3c8e941bf09a5e",
+          "size": 1012736
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCPreview.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCPreview.dll",
+          "preserve_existing": false,
+          "sha256": "5a99b5aa899c86b511c61bdb1fcf1705e23e7c5d27f464a462772b78dbe73e47",
+          "size": 940032
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCPreview.lib",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCPreview.lib",
+          "preserve_existing": false,
+          "sha256": "3d6bbe6ef0ac5a602ad939ebacbdc12b4977ab4e400cdc49d46628d55138341d",
+          "size": 37890
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/HCVoiceTalk.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/HCVoiceTalk.dll",
+          "preserve_existing": false,
+          "sha256": "2a7c325db06ec377d18fe662db0f6961556c15d185d8e26de8bbe2c8a61254ae",
+          "size": 1299456
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/libiconv2.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/libiconv2.dll",
+          "preserve_existing": false,
+          "sha256": "371decacb5a85c1df945697436d8db234cc9545301df745ec173b6e6694a74b6",
+          "size": 987648
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/OpenAL32.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/OpenAL32.dll",
+          "preserve_existing": false,
+          "sha256": "c3691af1e66cd756ac6c6c614e176c339ae7eec7a8280f06ff27c7764140b995",
+          "size": 2211840
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/StreamTransClient.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/StreamTransClient.dll",
+          "preserve_existing": false,
+          "sha256": "9656839d152dc149179fa0378ac914c01e688f87a457d11cafe1070ea5c5b133",
+          "size": 934400
+        },
+        {
+          "member": "project/camera/SDK/lib/HCNetSDKCom/SystemTransform.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HCNetSDKCom/SystemTransform.dll",
+          "preserve_existing": false,
+          "sha256": "12749cbb05ce7f6d34a5abe179d2eaf8614415aae34a030cab7bec31bcbdbb35",
+          "size": 913920
+        },
+        {
+          "member": "project/camera/SDK/lib/hlog.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/hlog.dll",
+          "preserve_existing": false,
+          "sha256": "0bdd53e07633ae7d07bdc6352f74c822c2d78681d1a510577c5d87c114e223b5",
+          "size": 1267200
+        },
+        {
+          "member": "project/camera/SDK/lib/HmMerge.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HmMerge.dll",
+          "preserve_existing": false,
+          "sha256": "24ee52a06d24a4f509f36770c3fdd1a6b5ffae44ab52c03df274f9e1f2176125",
+          "size": 385536
+        },
+        {
+          "member": "project/camera/SDK/lib/hpr.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/hpr.dll",
+          "preserve_existing": false,
+          "sha256": "103395e1e2e51c6cca0390e3be975d68b9fa70f1e859d9d97736725e72db3476",
+          "size": 151040
+        },
+        {
+          "member": "project/camera/SDK/lib/HXVA.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/HXVA.dll",
+          "preserve_existing": false,
+          "sha256": "7d70edc2fa6124e1e4bb050c6a3aab5d9a09d86bcf20d76bc029d4f39e87f476",
+          "size": 2234880
+        },
+        {
+          "member": "project/camera/SDK/lib/libcrypto-1_1-x64.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/libcrypto-1_1-x64.dll",
+          "preserve_existing": false,
+          "sha256": "6c638558256a69a3b0b844d59655022402003d21b2508183a5f07476fc1ef8de",
+          "size": 2968064
+        },
+        {
+          "member": "project/camera/SDK/lib/libmmd.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/libmmd.dll",
+          "preserve_existing": false,
+          "sha256": "6142bde15261bd7177252aa8f716560a5344004e1b97a0b3c6280fc10d22829b",
+          "size": 3249568
+        },
+        {
+          "member": "project/camera/SDK/lib/libssl-1_1-x64.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/libssl-1_1-x64.dll",
+          "preserve_existing": false,
+          "sha256": "48869d6b2b6235a123e3bad233d29f3e50fa7bd5831d3a5dfe8cbd280c7209d6",
+          "size": 829952
+        },
+        {
+          "member": "project/camera/SDK/lib/LocalSensorAdd.dat",
+          "root": "project",
+          "target": "camera/SDK/lib/LocalSensorAdd.dat",
+          "preserve_existing": false,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "member": "project/camera/SDK/lib/LocalXml.zip",
+          "root": "project",
+          "target": "camera/SDK/lib/LocalXml.zip",
+          "preserve_existing": false,
+          "sha256": "2b6b0cd5d8e1ee7faf7f1e5c1454d84f1d972d93efcad551846aabcdbe963dae",
+          "size": 1313724
+        },
+        {
+          "member": "project/camera/SDK/lib/MP_Render.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/MP_Render.dll",
+          "preserve_existing": false,
+          "sha256": "f512846c63b26275c456badb2785300e14a43edaf5468cf8ec65c3d2411dc6ae",
+          "size": 406016
+        },
+        {
+          "member": "project/camera/SDK/lib/NPQos.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/NPQos.dll",
+          "preserve_existing": false,
+          "sha256": "994f0a0065f331c72b311e1a92eedc334b3f21db6622e2a9b45079fd3acc522a",
+          "size": 1907200
+        },
+        {
+          "member": "project/camera/SDK/lib/OpenAL32.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/OpenAL32.dll",
+          "preserve_existing": false,
+          "sha256": "c3691af1e66cd756ac6c6c614e176c339ae7eec7a8280f06ff27c7764140b995",
+          "size": 2211840
+        },
+        {
+          "member": "project/camera/SDK/lib/PlayCtrl.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/PlayCtrl.dll",
+          "preserve_existing": false,
+          "sha256": "355fe6ece841b5e816840ebdc4f81209b376024a8055837c23e1dbce28ab94c2",
+          "size": 5725696
+        },
+        {
+          "member": "project/camera/SDK/lib/SuperRender.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/SuperRender.dll",
+          "preserve_existing": false,
+          "sha256": "051962e552e54ed1f6385766cbb5db16d026c80bd2375f3de3e4b220e196e5c5",
+          "size": 1636864
+        },
+        {
+          "member": "project/camera/SDK/lib/YUVProcess.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/YUVProcess.dll",
+          "preserve_existing": false,
+          "sha256": "dadb3fc1c97143e0e95aee85b85880dbf5e104840cb2b4956a5b763b0fdc78c5",
+          "size": 644096
+        },
+        {
+          "member": "project/camera/SDK/lib/zlib1.dll",
+          "root": "project",
+          "target": "camera/SDK/lib/zlib1.dll",
+          "preserve_existing": false,
+          "sha256": "544376055befe31570d2efbe6dd947756ed35790db7eccb8ab1d9d16a47a2838",
+          "size": 85504
+        },
+        {
+          "member": "face-home/models/antelopev2/1k3d68.onnx",
+          "root": "face-home",
+          "target": "models/antelopev2/1k3d68.onnx",
+          "preserve_existing": false,
+          "sha256": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+          "size": 143607619
+        },
+        {
+          "member": "face-home/models/antelopev2/2d106det.onnx",
+          "root": "face-home",
+          "target": "models/antelopev2/2d106det.onnx",
+          "preserve_existing": false,
+          "sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+          "size": 5030888
+        },
+        {
+          "member": "face-home/models/antelopev2/genderage.onnx",
+          "root": "face-home",
+          "target": "models/antelopev2/genderage.onnx",
+          "preserve_existing": false,
+          "sha256": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb",
+          "size": 1322532
+        },
+        {
+          "member": "face-home/models/antelopev2/glintr100.onnx",
+          "root": "face-home",
+          "target": "models/antelopev2/glintr100.onnx",
+          "preserve_existing": false,
+          "sha256": "4ab1d6435d639628a6f3e5008dd4f929edf4c4124b1a7169e1048f9fef534cdf",
+          "size": 260665334
+        },
+        {
+          "member": "face-home/models/antelopev2/scrfd_10g_bnkps.onnx",
+          "root": "face-home",
+          "target": "models/antelopev2/scrfd_10g_bnkps.onnx",
+          "preserve_existing": false,
+          "sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+          "size": 16923827
+        },
+        {
+          "member": "project/.downloads/wheels/insightface-1.0.1-py3-none-any.whl",
+          "root": "project",
+          "target": ".downloads/wheels/insightface-1.0.1-py3-none-any.whl",
+          "preserve_existing": false,
+          "sha256": "5f373f6fedbdda5cbc59a34ca386a75a2995cdaf6899402590ae9eb4308fc2e8",
+          "size": 762241
+        }
+      ]
+    },
+    {
+      "group": "config",
+      "name": "detect-config-v1.zip",
+      "size": 3622,
+      "sha256": "8d0351d790909e0df25e893d7a38168e14a588ae0d96f08ad169d82e80d98564",
+      "files": [
+        {
+          "member": "project/camera/config/cameras.json",
+          "root": "project",
+          "target": "camera/config/cameras.json",
+          "preserve_existing": true,
+          "sha256": "0abe3726b07ac499dd5fc13cd66f300dc62ac1cb72bfc5cc9dc887fbdc904020",
+          "size": 21693
+        }
+      ]
+    },
+    {
+      "group": "engines",
+      "name": "detect-source-engines-v1.zip",
+      "size": 372644818,
+      "sha256": "d20250d43c1ff22e37df2f8475239389ecc2a86c42a9d1349e079e3decb0d2ed",
+      "files": [
+        {
+          "member": "project/reference_engines/weapon.engine",
+          "root": "project",
+          "target": "reference_engines/weapon.engine",
+          "preserve_existing": false,
+          "sha256": "442d793caa8c25c6bec2468ac091613b6407bf224393dac17e0ce6a09a892c9d",
+          "size": 44755989
+        },
+        {
+          "member": "project/reference_engines/weapon_yoloe.engine",
+          "root": "project",
+          "target": "reference_engines/weapon_yoloe.engine",
+          "preserve_existing": false,
+          "sha256": "11d3b76323c9abccdf192a061420dfa5c32ad578cadc21e73300311254361c36",
+          "size": 61425418
+        },
+        {
+          "member": "project/reference_engines/yolo11s-pose.engine",
+          "root": "project",
+          "target": "reference_engines/yolo11s-pose.engine",
+          "preserve_existing": false,
+          "sha256": "724268cf1d533724c0a36cfbf266b71ebc0b59915338afc71c86d1af1be3784b",
+          "size": 23841442
+        },
+        {
+          "member": "project/reference_engines/yolo26x-pose.engine",
+          "root": "project",
+          "target": "reference_engines/yolo26x-pose.engine",
+          "preserve_existing": false,
+          "sha256": "c0823ccea16e717f0a019a77b2698a7ee9131f380793ee49a92b0e339a300528",
+          "size": 118200313
+        },
+        {
+          "member": "project/reference_engines/yolo26x.engine",
+          "root": "project",
+          "target": "reference_engines/yolo26x.engine",
+          "preserve_existing": false,
+          "sha256": "10827a11267ea3455f00248fd59909d1de55c5895ea249908b92cb0d9207207a",
+          "size": 114326815
+        },
+        {
+          "member": "project/reference_engines/yolo26x.int8.engine",
+          "root": "project",
+          "target": "reference_engines/yolo26x.int8.engine",
+          "preserve_existing": false,
+          "sha256": "7f4936cb7fda95af12b989e6bd37d585ed6c7dff3915fc0e9b081b23c5ab822c",
+          "size": 185936889
+        }
+      ]
+    },
+    {
+      "group": "optional",
+      "name": "detect-optional-1-v1.zip",
+      "size": 1107030480,
+      "sha256": "4260cade3754cba4aeaa0f684e34a7f9fd3aee23f69d1cf8ff05e40dc0e0856f",
+      "files": [
+        {
+          "member": "project/recognition/weapon.fp16.onnx",
+          "root": "project",
+          "target": "recognition/weapon.fp16.onnx",
+          "preserve_existing": false,
+          "sha256": "c476167f9635c51c03dafa0d05ea3c3a5dac382c1e08f67b057a24345fecf227",
+          "size": 41410325
+        },
+        {
+          "member": "project/recognition/weapon.onnx",
+          "root": "project",
+          "target": "recognition/weapon.onnx",
+          "preserve_existing": false,
+          "sha256": "cc7ba1a51621ddfb14fdb8431ab28d39d8c05747a65cf5eac15f21d3083a1e84",
+          "size": 82229230
+        },
+        {
+          "member": "project/recognition/yolo11s-pose.fp16.onnx",
+          "root": "project",
+          "target": "recognition/yolo11s-pose.fp16.onnx",
+          "preserve_existing": false,
+          "sha256": "d54e75a6c0f2433c72b9d2665fc34cc2dbf6ba977d099f5b4561d3a88c54c1dd",
+          "size": 20320461
+        },
+        {
+          "member": "project/recognition/yolo11s-pose.onnx",
+          "root": "project",
+          "target": "recognition/yolo11s-pose.onnx",
+          "preserve_existing": false,
+          "sha256": "78a768e4ac98c041772010c20b0234856d2ecb06dc838e518440f75ed08b2fd5",
+          "size": 40108835
+        },
+        {
+          "member": "project/recognition/yolo26x.fp16.onnx",
+          "root": "project",
+          "target": "recognition/yolo26x.fp16.onnx",
+          "preserve_existing": false,
+          "sha256": "4f1dd3343aa67f0656f42f2cb69e686743dfa60dd2b16109a42f3bb8ba402f44",
+          "size": 112612312
+        },
+        {
+          "member": "project/recognition/yolo26x.int8.onnx",
+          "root": "project",
+          "target": "recognition/yolo26x.int8.onnx",
+          "preserve_existing": false,
+          "sha256": "ea7783dc6ae923d08050bb42f7ddfde41dde28bfc2926d495fec6384e25d137b",
+          "size": 112846600
+        },
+        {
+          "member": "project/recognition/yolo26x.onnx",
+          "root": "project",
+          "target": "recognition/yolo26x.onnx",
+          "preserve_existing": false,
+          "sha256": "fb99d18734ea2ca4ab3fdde7db7a11f3e7468ca6c7195535a43db9a8a2136e0d",
+          "size": 223976954
+        },
+        {
+          "member": "project/mobileclip_blt.ts",
+          "root": "project",
+          "target": "mobileclip_blt.ts",
+          "preserve_existing": false,
+          "sha256": "a67804d1b0f07b8b9a20c1761ec0847f34660f5fa338ec70e8f3fce68ed95e54",
+          "size": 599764649
+        }
+      ]
+    },
+    {
+      "group": "optional",
+      "name": "detect-optional-2-v1.zip",
+      "size": 825938026,
+      "sha256": "83ec88a23706ac74177e7a65399b31336c2639bbfdb4c8889d532c6e714b8166",
+      "files": [
+        {
+          "member": "project/yoloe-11l-seg.fp16.onnx",
+          "root": "project",
+          "target": "yoloe-11l-seg.fp16.onnx",
+          "preserve_existing": false,
+          "sha256": "e76bd512d5f825d031a942b922aca3334bfe38fcd08105e8f7b0f168f755959b",
+          "size": 55962752
+        },
+        {
+          "member": "project/yoloe-11l-seg.onnx",
+          "root": "project",
+          "target": "yoloe-11l-seg.onnx",
+          "preserve_existing": false,
+          "sha256": "b83282ef3d38a9fc5fc1547cd51a5cfa5bc14212d97b547a1ecc0b61b3c26907",
+          "size": 111506350
+        },
+        {
+          "member": "project/yoloe-11l-seg.pt",
+          "root": "project",
+          "target": "yoloe-11l-seg.pt",
+          "preserve_existing": false,
+          "sha256": "a993fb0fc7c8830939ae14e6434a925dd1179428158c2761482eb8a8d8a3699f",
+          "size": 70982416
+        },
+        {
+          "member": "project/yolov8l-worldv2.pt",
+          "root": "project",
+          "target": "yolov8l-worldv2.pt",
+          "preserve_existing": false,
+          "sha256": "276b618c2f04e6e08e32f085b3c0e8baf2dbffa46af5119b888423e859a6ee01",
+          "size": 94224632
+        },
+        {
+          "member": "project/yolov8x-worldv2.pt",
+          "root": "project",
+          "target": "yolov8x-worldv2.pt",
+          "preserve_existing": false,
+          "sha256": "41e771bfbbb8894dd857f3fef7cac3b3578dffd49fd3547101efa6a606a02a0e",
+          "size": 146355704
+        },
+        {
+          "member": "project/weights/clip/ViT-B-32.pt",
+          "root": "project",
+          "target": "weights/clip/ViT-B-32.pt",
+          "preserve_existing": false,
+          "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+          "size": 353976522
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_coreml_float32.mlmodel",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_coreml_float32.mlmodel",
+          "preserve_existing": false,
+          "sha256": "dde5c87e37e70d69e1a830550a99d59fc8f82835532696cdb39c3464387e64c7",
+          "size": 2978603
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_float16_quant.tflite",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_float16_quant.tflite",
+          "preserve_existing": false,
+          "sha256": "9f4ea1210d5785b270d5f645e993a4e7422392d6b33623477c89b2b9539dce20",
+          "size": 1533936
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_float32.onnx",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_float32.onnx",
+          "preserve_existing": false,
+          "sha256": "110e256977ec21e22f79ef23ec72dfbca6d617e79106e6b23f0563a1e7a39959",
+          "size": 2986705
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_float32.pb",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_float32.pb",
+          "preserve_existing": false,
+          "sha256": "e2798b15bd8602be9a75dea9e0a5e52be3266acd585edfb8eb3cbd7cac02b4c0",
+          "size": 3001375
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_float32.tflite",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_float32.tflite",
+          "preserve_existing": false,
+          "sha256": "0a5930d922658aaa6db9c3db29496372027baaceff2cf43d3d0a7465c66ab768",
+          "size": 2982232
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_integer_quant.tflite",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_integer_quant.tflite",
+          "preserve_existing": false,
+          "sha256": "9ae4bd598390672a69302d973ab6b1a7e88984ff3e168a27a63d244c1a8d1fa6",
+          "size": 882088
+        },
+        {
+          "member": "project/recognition/par/saved_model/model_weight_quant.tflite",
+          "root": "project",
+          "target": "recognition/par/saved_model/model_weight_quant.tflite",
+          "preserve_existing": false,
+          "sha256": "afe7d8215d3d3b3d4287a409c2a31dde95279c377b5c632b035ee0560dfcc830",
+          "size": 870496
+        },
+        {
+          "member": "project/recognition/par/saved_model/openvino/FP16/person-attributes-recognition-crossroad-0230.bin",
+          "root": "project",
+          "target": "recognition/par/saved_model/openvino/FP16/person-attributes-recognition-crossroad-0230.bin",
+          "preserve_existing": false,
+          "sha256": "0834f45ee09fef11fd3774005cff05bf9f14678eb7403a01cdfc0b8925f1ff3b",
+          "size": 1469632
+        },
+        {
+          "member": "project/recognition/par/saved_model/openvino/FP16/person-attributes-recognition-crossroad-0230.xml",
+          "root": "project",
+          "target": "recognition/par/saved_model/openvino/FP16/person-attributes-recognition-crossroad-0230.xml",
+          "preserve_existing": false,
+          "sha256": "9fc783a1234b6700d6f469b86e2d0c8a3f3059e53a07d4bcf34fe92a00296127",
+          "size": 189984
+        },
+        {
+          "member": "project/recognition/par/saved_model/openvino/FP32/person-attributes-recognition-crossroad-0230.bin",
+          "root": "project",
+          "target": "recognition/par/saved_model/openvino/FP32/person-attributes-recognition-crossroad-0230.bin",
+          "preserve_existing": false,
+          "sha256": "717aa86c9eeca18ed49931494c50967559042338203ea69362b73276b51f8a97",
+          "size": 2939240
+        },
+        {
+          "member": "project/recognition/par/saved_model/openvino/FP32/person-attributes-recognition-crossroad-0230.xml",
+          "root": "project",
+          "target": "recognition/par/saved_model/openvino/FP32/person-attributes-recognition-crossroad-0230.xml",
+          "preserve_existing": false,
+          "sha256": "871ebc205557431b7d78dacfa12a8ea88718fb83caf20dbc0eb612e814a3e4d5",
+          "size": 190069
+        },
+        {
+          "member": "project/recognition/par/saved_model/openvino/myriad/person_attributes_recognition_crossroad_0230.blob",
+          "root": "project",
+          "target": "recognition/par/saved_model/openvino/myriad/person_attributes_recognition_crossroad_0230.blob",
+          "preserve_existing": false,
+          "sha256": "a2e45818124313c95390bddc9ff42744feba5735a675c90d1ea9bcc4a79532ad",
+          "size": 1518464
+        },
+        {
+          "member": "project/recognition/par/saved_model/saved_model.pb",
+          "root": "project",
+          "target": "recognition/par/saved_model/saved_model.pb",
+          "preserve_existing": false,
+          "sha256": "8d41131c211fb41edd720c256ec823e1529bac903fb32240a38eef658fc9a24f",
+          "size": 49720561
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float16/assets/trt-serialized-engine.TRTEngineOp_1_0",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float16/assets/trt-serialized-engine.TRTEngineOp_1_0",
+          "preserve_existing": false,
+          "sha256": "2206a872c20df248720f725174208afa9ac510a5ab953971cc34dcaa94ec3812",
+          "size": 1763584
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float16/saved_model.pb",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float16/saved_model.pb",
+          "preserve_existing": false,
+          "sha256": "81ff80163ba8ce350bb060a72d3cfa94346c16031973b6f66d443ecf5f367feb",
+          "size": 4286666
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float16/variables/variables.data-00000-of-00001",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float16/variables/variables.data-00000-of-00001",
+          "preserve_existing": false,
+          "sha256": "86dd759b0e193148b248b344c463853466ecf02089c7682d1abd7090839669e4",
+          "size": 2983236
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float16/variables/variables.index",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float16/variables/variables.index",
+          "preserve_existing": false,
+          "sha256": "725427620b345b7161169e0ed07b2d056aaae272974ea28c72ed29acff19dce4",
+          "size": 4375
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float32/assets/trt-serialized-engine.TRTEngineOp_0_0",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float32/assets/trt-serialized-engine.TRTEngineOp_0_0",
+          "preserve_existing": false,
+          "sha256": "0a9c3ca5f343ae2541c67225423ed2517972ea6304475db1bb3c786925a44823",
+          "size": 3133155
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float32/saved_model.pb",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float32/saved_model.pb",
+          "preserve_existing": false,
+          "sha256": "d583c146adb657c341d4775105525ae9debd2679e95e17c552a31d227d0a01cc",
+          "size": 4286063
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float32/variables/variables.data-00000-of-00001",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float32/variables/variables.data-00000-of-00001",
+          "preserve_existing": false,
+          "sha256": "f2e63cbb935c7b953bc16eadd82319c3251eee35be8528a516726bc1de282de0",
+          "size": 2983236
+        },
+        {
+          "member": "project/recognition/par/saved_model/tensorrt_saved_model_float32/variables/variables.index",
+          "root": "project",
+          "target": "recognition/par/saved_model/tensorrt_saved_model_float32/variables/variables.index",
+          "preserve_existing": false,
+          "sha256": "6159ecf0ec123b50f59bb3c3c4bbf359c56466a3a580d5874dc5f2311a24863a",
+          "size": 4375
+        },
+        {
+          "member": "project/recognition/par/saved_model/tfjs_model_float16/group1-shard1of1.bin",
+          "root": "project",
+          "target": "recognition/par/saved_model/tfjs_model_float16/group1-shard1of1.bin",
+          "preserve_existing": false,
+          "sha256": "abf7a88086d24190dbd046539637e6d835b703fb8cff788f4bc8c03fbff04199",
+          "size": 1470324
+        },
+        {
+          "member": "project/recognition/par/saved_model/tfjs_model_float16/model.json",
+          "root": "project",
+          "target": "recognition/par/saved_model/tfjs_model_float16/model.json",
+          "preserve_existing": false,
+          "sha256": "d38242193c9f38ad4c5db9ca9aa213bb95c9f65b022753cb43eb42c1b0b0a810",
+          "size": 135959
+        },
+        {
+          "member": "project/recognition/par/saved_model/tfjs_model_float32/group1-shard1of1.bin",
+          "root": "project",
+          "target": "recognition/par/saved_model/tfjs_model_float32/group1-shard1of1.bin",
+          "preserve_existing": false,
+          "sha256": "e56a32e0c96d6371d5d5cc7ea872ae5ff555610ed3381e196c0398e3bda2b90e",
+          "size": 2939932
+        },
+        {
+          "member": "project/recognition/par/saved_model/tfjs_model_float32/model.json",
+          "root": "project",
+          "target": "recognition/par/saved_model/tfjs_model_float32/model.json",
+          "preserve_existing": false,
+          "sha256": "29d4f9c862fe54091f445fa18b107e34b6cbf21e838837ab845fa99d70dff92b",
+          "size": 127249
+        },
+        {
+          "member": "project/recognition/par/saved_model/variables/variables.data-00000-of-00001",
+          "root": "project",
+          "target": "recognition/par/saved_model/variables/variables.data-00000-of-00001",
+          "preserve_existing": false,
+          "sha256": "5490fdab0849d56554e2d5b5cec4b81a775a5dad5d73428b020c9d0c9d56eb2a",
+          "size": 2963283
+        },
+        {
+          "member": "project/recognition/par/saved_model/variables/variables.index",
+          "root": "project",
+          "target": "recognition/par/saved_model/variables/variables.index",
+          "preserve_existing": false,
+          "sha256": "16d586d8600157c09bc214de5f9e1a4e4aff72920e1531a3023963ee28799b8f",
+          "size": 4375
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "enrolled people",
+    "identity embeddings",
+    "face crops",
+    "unknown-face captures",
+    "all SQLite databases and history",
+    "live/calibration/evaluation captures",
+    "logs",
+    "publication artifacts",
+    "duplicate engine backups"
+  ]
+}
